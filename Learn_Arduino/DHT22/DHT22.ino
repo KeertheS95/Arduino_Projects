@@ -6,7 +6,7 @@
 // - Adafruit Unified Sensor Lib: https://github.com/adafruit/Adafruit_Sensor
 
 #include "DHT.h"
-
+#include <Wire.h>
 #define DHTPIN 2     // Digital pin connected to the DHT sensor
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
@@ -31,7 +31,7 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.println(F("DHTxx test!"));
 
   dht.begin();
